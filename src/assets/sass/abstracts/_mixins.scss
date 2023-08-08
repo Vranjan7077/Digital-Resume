@@ -1,0 +1,56 @@
+@mixin mq($size) {
+    @if map.has-key($breakpoints, $size) {
+        $breakpoint: map-get($breakpoints, $size);
+        @media screen and (min-width: $breakpoint) {
+            @content;
+        }
+    } @else if meta.type-of($size) == number {
+        @if math.is-unitless($size) {
+            @error 'when using a number with @mq() make sure to include a unit';
+        } @else {
+            @media screen and (min-width: $size) {
+                @content;
+            }
+        }
+    } @else {
+        @error 'the keyword #{$size} is not in the $breakpoints map';
+    }
+}
+
+@mixin heading($fs, $color: $heading-color-default) {
+    font-size: $fs;
+    color: $color;
+    font-family: $heading-font-family;
+    text-transform: $heading-text-transform;
+    line-height: $heading-line-height;
+}
+
+@mixin hover-focus {
+    &:hover,
+    &:focus {
+        @content;
+    }
+}
+
+@mixin sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@mixin sr-only-focusable {
+    &:active,
+    &:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+    }
+}

@@ -1,0 +1,20 @@
+{% if repositories.length %}
+    <ol>
+        {% for repo in repositories.slice(0, 3) %}
+            <li>
+                <h3>
+                    <a href="{{ repo.html_url }}">{{ repo.name }}</a>
+                </h3>
+                {% if repo.description %}
+                    <p>{{ repo.description }}</p>
+                {% endif %}
+                <div class="author-repo-stats">
+                    <p>{%- icon "star" -%}{{ repo.stargazers_count }}
+                        <span class="sr-only"> stars</span></p>
+                    <p>{%- icon "fork" -%}{{ repo.forks_count }}
+                        <span class="sr-only"> forks</span></p>
+                </div>
+            </li>
+        {% endfor %}
+    </ol>
+{% endif %}

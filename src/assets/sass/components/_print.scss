@@ -1,0 +1,54 @@
+@media print {
+    @page {
+        margin: 1cm 3cm;
+    }
+
+    :root {
+        --text-color: #000000;
+    }
+
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+        font-size: 10px !important;
+        overflow: visible;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-shadow: none !important;
+        text-shadow: none !important;
+        transition: none !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h1,
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+    .dr-container {
+        max-width: none !important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    [aria-label='Print Resume'] {
+        display: none !important;
+    }
+
+    .dr-container__content--title {
+        em {
+            display: none;
+        }
+    }
+}

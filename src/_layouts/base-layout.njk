@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html class="scroll-smooth no-js" {% if section %} data-current="{{ section }}"{% endif %} lang="en">
+    {% include "tags/dr-head.njk" %}
+    <body>
+        <div data-icon-sprite hidden>{% iconsprite %}</div>
+
+        <div class="layout h-resume" role="document">
+            {% include "components/dr-header.njk" %}
+            {% block content %}
+                {{ content | safe }}
+            {% endblock content %}
+            {% include "components/dr-footer.njk" %}
+        </div>
+        <!--scripts-->
+        <script type="text/javascript" src="{{ '/assets/scripts/main.js' | url }}"></script>
+        <!--End of scripts-->
+    </body>
+</html>

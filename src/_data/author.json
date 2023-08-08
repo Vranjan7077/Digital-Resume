@@ -1,0 +1,70 @@
+{
+    "name": "John Wick",
+    "occupation": "Software Engineer",
+    "location": "Noida, In",
+    "avatar": "avatar.jpg",
+    "pronouns": "he/him",
+    "email": "lorem.ipsum@gmail.com",
+    "telephone": "+91 - 123 456 789",
+    "website": "https://vranjan.dev",
+    "social": [
+        {
+            "name": "Github",
+            "user": "Hipster",
+            "url": "#"
+        },
+        {
+            "name": "LinkedIn",
+            "user": "Yorkshire",
+            "url": "#"
+        },
+        {
+            "name": "Portfolio",
+            "user": "Delorean",
+            "url": "#"
+        }
+    ],
+    "skills": [
+        {
+            "technologies": [
+                "HTML",
+                "CSS",
+                "SASS",
+                "Less",
+                "Javascript / ES6",
+                "Typescript",
+                "AJAX",
+                "jQuery",
+                "Bootstrap",
+                "Material UI",
+                "Tailwind CSS",
+                "Gulp",
+                "Grunt",
+                "Nunjucks",
+                "Handlebars",
+                "Angular",
+                "React"
+            ],
+            "sap": ["HYBIRS", "Spartacus", "CDC", "Onetrust"],
+            "operatingSystems": ["Windows", "Linux"],
+            "versioningEcosystem": ["Git / Github", "Netlify", "Heroku"],
+            "programmingLanguages": ["C / C++", "Core Java"],
+            "tools": [
+                "figma",
+                "Adobe XD",
+                "Adobe Illustrator",
+                "Intellij Idea",
+                "VS Code"
+            ],
+            "others": [
+                "Cross-platform compatibility",
+                "ADA Compliance",
+                "Web Accessibility",
+                "BrowserStack",
+                "BEM",
+                "Jenkins",
+                "JIRA"
+            ]
+        }
+    ]
+}

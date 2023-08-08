@@ -1,0 +1,199 @@
+.main-section {
+    display: grid;
+    column-gap: 1.5rem;
+    page-break-inside: avoid;
+    grid-template-columns: 30% 70%;
+    margin: 0 auto;
+    @media only screen and (min-width: 691px) and(max-width: 1023px) {
+        grid-template-columns: repeat(1, 1fr);
+        width: 90%;
+        margin: 0 auto;
+    }
+    @media only screen and (max-width: 690px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+aside {
+    section {
+        padding: 0.5rem 0 0 0;
+        page-break-inside: avoid;
+        h2 {
+            font-size: 1.5rem;
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            &::after {
+                content: '';
+                width: 100%;
+                display: inline-block;
+            }
+            li {
+                margin: auto 6px;
+                display: inline-block;
+                &:hover {
+                    color: #d63384;
+                }
+            }
+        }
+    }
+    .author-social--container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.main-section--right {
+    article {
+        padding-bottom: 1rem;
+        page-break-inside: avoid;
+        h2 {
+            font-size: 1.5rem;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+        }
+        ol {
+            position: relative;
+            list-style-type: none;
+            li.p-experience,
+            li.p-education {
+                position: relative;
+                article {
+                    div {
+                        &:nth-child(2) {
+                            p {
+                                margin: 5px auto;
+                                list-style: disc outside none;
+                                display: list-item;
+                            }
+                        }
+                        &:first-child {
+                            display: flex;
+                            flex-direction: column;
+                            p.organization-entry__time {
+                                color: #818a91;
+                                font-size: 0.875rem;
+                                letter-spacing: 0.125em;
+                                text-transform: uppercase;
+                                order: -1;
+                                margin-bottom: 0.25rem;
+                                font-family: $heading-font-family;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+a.organisation-url,
+p.organization-entry__details a {
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: from-font;
+}
+
+.author-social--links {
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+li.p-education {
+    display: inline-block;
+    p.organization-entry__details {
+        order: -1;
+    }
+    p.organization-entry__time {
+        color: #818a91;
+        font-size: 0.875rem;
+        letter-spacing: 0.125em;
+        text-transform: uppercase;
+        order: -0;
+        margin-bottom: 0.25rem;
+        font-family: $heading-font-family;
+    }
+}
+
+li.p-education {
+    article {
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.author--educations,
+.author-social--links,
+.author-tech--skills {
+    padding-bottom: 1rem;
+}
+
+.author-repo-stats {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+    padding-top: 0.25rem;
+    p {
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+        svg {
+            margin-right: 0.125em;
+        }
+    }
+}
+
+#section-oos {
+    ol {
+        li:not(:last-child) {
+            margin-bottom: 1.5rem;
+            a {
+                text-decoration: none;
+                text-decoration-skip-ink: auto;
+                text-decoration-thickness: from-font;
+            }
+        }
+    }
+}
+
+#section-about {
+    p:not(:last-child) {
+        margin: 5px auto;
+    }
+}
+
+@media only screen and (min-width: 691px) and(max-width: 1023px) {
+    footer {
+        margin: auto 10px;
+        .dr-container {
+            width: 100%;
+        }
+    }
+    .author--educations {
+        ol {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+@media only screen and (max-width: 690px) {
+    footer {
+        //margin: auto 10px;
+        .dr-container {
+            width: 90%;
+        }
+    }
+    .main-section--right,
+    .main-section--left {
+        margin: auto 10px;
+    }
+}

@@ -1,0 +1,47 @@
+---
+layout: base-layout.njk
+---
+
+<main class="dr-container main-section">
+    <section class="main-section--left">
+        {% include "components/other/dr-main-sidebar.njk" %}
+    </section>
+
+    <section class="main-section--right">
+        {# Your experience about here #}
+        {% if collections.introduction.length %}
+            {% set intro = collections.introduction | first %}
+            <article class="section" id="section-about">
+                <h2 aria-label="{{ intro.data.title }}">{{ intro.data.title }}</h2>
+                <div>
+                    {{ intro.templateContent | safe }}
+                </div>
+            </article>
+        {% endif %}
+
+        {# Your experience goes here #}
+        <article class="section" id="section-experience">
+            <h2>{{ strings.titles.experience }}</h2>
+            {% set entries = collections.work %}
+            {% set microformat = "p-experience" %}
+            {% include "components/other/dr-entrylist.njk" %}
+        </article>
+
+        {# Your open source contribution goes here #}
+        {# {% if repositories.length %}
+            <article class="section" id="section-oos">
+                <h2>{{ strings.titles.open_source }}</h2>
+                {% include "components/other/dr-repositories.njk" %}
+            </section>
+        {% endif %} #}
+
+        {# Your projects goes here #}
+        <article class="section" id="section-projects">
+            <h2>{{ strings.titles.projects }}</h2>
+            {% set entries = collections.project %}
+            {% set microformat = "p-experience" %}
+            {% include "components/other/dr-entrylist.njk" %}
+        </article>
+
+    </section>
+</main>

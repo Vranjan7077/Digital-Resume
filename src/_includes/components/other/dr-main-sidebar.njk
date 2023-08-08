@@ -1,0 +1,113 @@
+<aside class="sidebar">
+    <!-- Author Education -->
+
+    <div class="author--educations">
+        <section>
+            <h2>{{ strings.titles.education }}</h2>
+            {% set entries = collections.education %}
+            {% set microformat = "p-education" %}
+            {% include "components/other/dr-entrylist.njk" %}
+        </section>
+    </div>
+
+    <!-- Author Social Links -->
+    {% if author.social %}
+        <div class="author-social--links">
+            <h2>Links : </h2>
+            <div class="author-social--container">
+                {% for social in author.social %}
+                    <a href="{{ social.url }}" aria-label="{{ social.name }}" rel="me">
+                        <strong>{{ social.name }}: //
+                        <span>{{ social.user }}</span></strong>
+                        <span class="sr-only">on {{ social.name }}</a>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    <!-- Author skills -->
+    {% for data in author.skills %}
+        {% if data.technologies or data.sap or data.operatingSystems or data.versioningEcosystem or data.programmingLanguages or data.tools or data.others%}
+            <div class="author-tech--skills">
+                {% if data.technologies %}
+                    <section>
+                        <h2>{{ strings.titles.technologies }} :</h2>
+                        <ul>
+                            {% for skill in data.technologies %}
+                                <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                {% endif %}
+
+                {% if data.sap %}
+                    <section>
+                        <h2>{{ strings.titles.sap }} :</h2>
+                        <ul>
+                            {% for skill in data.sap %}
+                                <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                {% endif %}
+
+                {% if data.versioningEcosystem %}
+                    <section>
+                        <h2>{{ strings.titles.versioningEcosystem }} :</h2>
+                        <ul>
+                            {% for skill in data.versioningEcosystem %}
+                                <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                {% endif %}
+
+                {% if data.operatingSystems %}
+                    <section>
+                        <h2>{{ strings.titles.operatingSystems }} :</h2>
+                        <ul>
+                            {% for skill in data.operatingSystems %}
+                                <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                {% endif %}
+
+                {% if data.programmingLanguages %}
+                    <section>
+                        <h2>{{ strings.titles.programmingLanguages }} :</h2>
+                        <ul>
+                            {% for skill in data.programmingLanguages %}
+                                <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                {% endif %}
+
+                {% if data.tools %}
+                    <section>
+                        <h2>{{ strings.titles.tools }} :</h2>
+                        <ul>
+                            {% for skill in data.tools %}
+                                <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                {% endif %}
+
+                {% if data.others %}
+                    <section>
+                        <h2>{{ strings.titles.others }} :</h2>
+                        <ul>
+                            {% for skill in data.others %}
+                                <li>{{ skill }}</li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                {% endif %}
+
+            </div>
+        {% endif %}
+    {% endfor %}
+</aside>

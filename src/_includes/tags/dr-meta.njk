@@ -1,0 +1,49 @@
+{% include "tags/dr-seo.njk" %}
+<title>{{ pageTitle }}</title>
+{%- if author.avatar -%}
+    {%- set avatarUrl -%}/assets/images/{{ author.avatar }}{% endset %}
+    <meta property="og:image" content="{{ avatarUrl | url | absoluteUrl(meta.url) }}">
+{%- endif -%}
+{# Font #}
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
+
+<link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
+<link rel="stylesheet" type="text/css" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css">
+{# Icons #}
+<link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/images/favicon/vicon/favicon.ico' | url }}">
+<link rel="apple-touch-icon" sizes="57x57"  href="{{ '/assets/images/favicon/apple-icon-57x57.png' | url }}">
+<link rel="apple-touch-icon" sizes="60x60"  href="{{ '/assets/images/favicon/apple-icon-60x60.png' | url }}">
+<link rel="apple-touch-icon" sizes="72x72"  href="{{ '/assets/images/favicon/apple-icon-72x72.png' | url }}">
+<link rel="apple-touch-icon" sizes="76x76"  href="{{ '/assets/images/favicon/apple-icon-76x76.png' | url }}">
+<link rel="apple-touch-icon" sizes="114x114"  href="{{ '/assets/images/favicon/apple-icon-114x114.png' | url }}">
+<link rel="apple-touch-icon" sizes="120x120"  href="{{ '/assets/images/favicon/apple-icon-120x120.png' | url }}">
+<link rel="apple-touch-icon" sizes="144x144"  href="{{ '/assets/images/favicon/apple-icon-144x144.png' | url }}">
+<link rel="apple-touch-icon" sizes="152x152"  href="{{ '/assets/images/favicon/apple-icon-152x152.png' | url }}">
+<link rel="apple-touch-icon" sizes="180x180"  href="{{ '/assets/images/favicon/apple-icon-180x180.png' | url }}">
+<link rel="icon" type="image/png" sizes="192x192"   href="{{ '/assets/images/favicon/android-icon-192x192.png' | url }}">
+<link rel="icon" type="image/png" sizes="32x32"  href="{{ '/assets/images/favicon/favicon-32x32.png' | url }}">
+<link rel="icon" type="image/png" sizes="96x96"  href="{{ '/assets/images/favicon/favicon-96x96.png' | url }}">
+<link rel="icon" type="image/png" sizes="16x16"  href="{{ '/assets/images/favicon/favicon-16x16.png' | url }}">
+<link rel="manifest" href="{{ '/site.webmanifest' | url }}">
+
+<script type="application/ld+json">
+    {
+        "name": "{{ author.name }}",
+        "description": "{{ author.occupation }}{% if author.location %} in {{ author.location }}{% endif %}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ author.name }}"
+        },
+        "@type": "WebSite",
+        "url": "{{ meta.url }}",
+        "image": "{{ meta.url }}/assets/images/{{ author.avatar }}",
+        "headline": "{{ author.name }}",
+        "sameAs": [
+            {%- for social in author.social -%}
+                "{{ social.url }}"{%- if not loop.last -%},{%- endif -%}
+            {%- endfor -%}
+        ],
+        "@context": "http://schema.org"
+    }
+</script>

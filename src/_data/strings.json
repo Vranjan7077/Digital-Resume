@@ -1,0 +1,24 @@
+{
+    "titles": {
+        "experience": "Work Experience",
+        "education": "Education",
+        "skills": "Skills",
+        "languages": "Languages",
+        "open_source": "Open Source",
+        "projects": "Projects",
+        "technologies": "Web technologies",
+        "sap": "SAP",
+        "operatingSystems": "Operating Systems",
+        "versioningEcosystem": "Versioning Ecosystem",
+        "programmingLanguages": "Programming Languages",
+        "tools": "Tools",
+        "others": "Others"
+    },
+    "labels": {
+        "email": "Email",
+        "telephone": "Telephone",
+        "print": "Print Resume",
+        "present": "Present",
+        "lastUpdated": "Last updated"
+    }
+}

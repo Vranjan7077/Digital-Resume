@@ -1,0 +1,27 @@
+body {
+    overflow-x: hidden;
+}
+
+.layout {
+    min-height: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    .header {
+        grid-area: header;
+    }
+    .main {
+        grid-area: main;
+    }
+
+    .footer {
+        grid-area: footer;
+        padding: 2rem 0;
+        background-color: #eceeef;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        display: block;
+    }
+}

@@ -1,0 +1,15 @@
+<footer class="footer">
+    <div class="dr-container">
+        <p>&copy; {{ author.name }}</p>
+        <button class="js-print has-tooltip" aria-label="{{ strings.labels.print }}">
+            {% icon "print" %}
+        </button>
+        <p>{{ strings.labels.lastUpdated }}: {{ build.timestamp | dateToFormat('dd.MM.yyyy') }}</p>
+        {% if build.demo %}
+            <a href="https://github.com/Vranjan7077/Digital-Resume" class="view-source">
+                <span>{% icon "github" %} view source</span>
+            </a>
+            {% endif%}
+        </div>
+
+    </footer>

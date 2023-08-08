@@ -1,0 +1,41 @@
+<article>
+    <div>
+        <h3>{{ entry.data.title }}</h3>
+
+        <p class="organization-entry__time">
+            {% if entry.data.start %}
+                <time datetime="{{ entry.data.start | dateToFormat("yyyy-MM-dd") }}">
+                    {{ entry.data.start | dateToFormat("MM/yyyy") }}
+                </time>
+                <span>&ndash;</span>
+            {% endif %}
+            {% if entry.data.end %}
+                <time datetime="{{ entry.data.end | dateToFormat("yyyy-MM-dd") }}">
+                    {{ entry.data.end | dateToFormat("MM/yyyy") }}
+                </time>
+            {% else %}
+                <span>{{ strings.labels.present }}</span>
+            {% endif %}
+        </p>
+
+        {% if entry.data.organization %}
+            <p class="organization-entry__details">
+                {% if entry.data.organizationUrl %}
+                    <a href="{{ entry.data.organizationUrl }}" target="_blank" rel="noopener noreferrer">{{ entry.data.organization }}</a>
+                {% else %}
+                    <span>{{ entry.data.organization }}</span>
+                {% endif %}
+                {% if entry.data.location %}
+                    <span aria-hidden="true">&middot;</span>
+                    <span>{{ entry.data.location }}</span>
+                {% endif %}
+            </p>
+        {% endif %}
+    </div>
+
+    {% if entry.templateContent %}
+        <div>
+            {{ entry.templateContent | safe }}
+        </div>
+    {% endif %}
+</article>

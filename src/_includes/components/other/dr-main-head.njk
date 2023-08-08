@@ -1,0 +1,22 @@
+<section class="dr-container__content">
+    <div class="dr-container__content--title">
+        <h1>{{ author.name }}</h1>
+        {% if author.pronouns %}
+            <em class="">({{ author.pronouns }})</em>
+        {% endif %}
+    </div>
+    <div class="dr-container__content--details">
+        {% if author.email %}
+            <a aria-label="Email" href="mailto:{{ author.email | obfuscate | safe }}">
+                {% icon "email" %}
+                <span>{{ author.email | obfuscate | safe }}</span>
+            </a>
+        {% endif %}
+        {% if author.telephone %}
+            <a aria-label="Telephone" href="tel:{{ author.telephone | stripSpaces }}">
+                {% icon "telephone" %}
+                <span>{{ author.telephone }}</span>
+            </a>
+        {% endif %}
+    </div>
+</section>

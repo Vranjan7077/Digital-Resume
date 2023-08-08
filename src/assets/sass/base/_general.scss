@@ -1,0 +1,14 @@
+html,
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $body-font-family;
+    font-weight: $body-font-weight;
+    font-size: $body-font-size;
+    color: $body-text-color;
+    line-height: $body-line-height;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+}

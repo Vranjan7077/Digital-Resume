@@ -1,0 +1,66 @@
+// @media only screen and (min-width: 940px) {
+.dr-container {
+    &__content {
+        &--title {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: center;
+            h1 {
+                font-size: 4.5rem;
+                @media only screen and (min-width: 691px) and(max-width: 1023px) {
+                    font-size: 2.25rem;
+                }
+                @media only screen and (max-width: 690px) {
+                    font-size: 1.25rem;
+                }
+            }
+            em {
+                color: #818a91;
+                font-size: 1.125rem;
+            }
+        }
+        &--details {
+            .icon {
+                display: inline-block;
+                font-size: 1.5em;
+                height: 1em;
+                width: 1em;
+                vertical-align: middle;
+                fill: currentColor;
+                pointer-events: none;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+                &:first-child {
+                    &::after {
+                        content: '';
+                        border-right: 1px solid #818a91;
+                        margin: auto 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+.main-head {
+    border-bottom: 1px solid #818a91;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    @media only screen and (max-width: 690px) {
+        width: 100%;
+        padding-top: 1rem;
+
+        [aria-label='Email'],
+        [aria-label='Telephone'] {
+            font-size: 12.5px;
+        }
+    }
+    @media only screen and (min-width: 691px) and(max-width: 1023px) {
+        width: 100%;
+        padding-top: 1rem;
+    }
+}
+// }
